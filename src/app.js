@@ -2,10 +2,11 @@ const express = require('express');
 const morgan = require('morgan');
 const app = express();
 
+
 const sayHello = (req, res, next) => {
   res.send('Hello!');
 }
-
+app.get('/hello', sayHello);
 app.use(morgan('dev'));
 
 // const logging = (req, res, next) => {
@@ -14,6 +15,6 @@ app.use(morgan('dev'));
 // }
 
 // app.use(logging);
-app.use(sayHello);
+// app.use(sayHello);
 
 module.exports = app;
